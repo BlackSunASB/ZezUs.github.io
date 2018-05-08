@@ -1,0 +1,3023 @@
+<!DOCTYPE html>
+<html>
+   <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      
+        <title></title>
+        
+        <link type="text/css" rel="stylesheet" href="/html/css/bootstrap.min.css">        
+        <link type="text/css" rel="stylesheet" href="/html/css/main.css">
+         
+        <script src="/html/js/jquery.js" type="text/javascript" /></script><script src="/html/js/angular.min.js" type="text/javascript" /></script><script src="/html/js/bootstrap.min.js" type="text/javascript" /></script><script src="/html/js/countdown.js" type="text/javascript" /></script>   </head>
+   <body ng-app="app">
+       <script>
+           var app = angular.module("app",[]);
+       </script>
+              
+       <style>
+            body{
+               background:#fafcff;
+            }
+            .container{
+                width:1170px;
+            }
+            
+            
+        </style>
+        <style>
+    #header{
+        height: 56px;
+        width:100%;
+        background:white;
+        position:relative;
+        z-index:100;
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.05);
+    }
+    #header .container{
+        position:relative;
+    }
+
+    #header .logo{
+        text-decoration: none;
+        font-size:18px;
+        font-weight: bolder;
+        color: white;
+        position:absolute;
+        left:0px;
+        top:14px;
+    }
+    #header .logo span{
+        color:#f7a738;
+    }
+
+    #header .account{
+        padding-top: 14px;
+        color: #222222;
+        float:right;
+    }
+</style>
+<div id='header'>
+    <div class="container">
+        <a href="/" class="logo">
+            <img src="/html/images/logo_small.png">
+        </a>
+
+        <style>
+            #header .account{
+                position:relative;
+                cursor:pointer;
+                font-size:16px;
+                
+            }
+
+            #header .account:hover .account_menu{
+                display:block;
+            }
+
+            #header .account .menu_icon{
+                position:relative;
+                top:-1px;
+                
+                display:inline-block;
+                vertical-align: middle;
+                width:19px;
+                height: 13px;
+                background: url('/html/images/icons.png');
+                background-position: -72px -2px;
+                margin-right:10px;
+            }
+
+            #header .account .arrow_down{
+                display:inline-block;
+                vertical-align: middle;
+                width:11px;
+                height: 7px;
+                background: url('/html/images/icons.png');
+                background-position: -56px -5px;
+                margin-left:10px;
+            }
+        </style>
+        
+        <div class="account">
+            <div class="menu_title">
+                <span class="menu_icon"></span>67578 vovave97@ya.ru<span class="arrow_down"></span>
+            </div>
+
+            <style>
+                .account_menu{
+                    display:none;
+                    background:white;
+                    width:310px;                    
+                    position:absolute;
+                    left:-45px;
+                    top:0px;
+                    box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
+                    font-size:16px;
+                    color: #222222;
+                    text-align: center;
+                    padding:17px 0px;
+                    z-index:100;
+                    cursor:default;
+                }
+
+                .account_menu .head{                            
+                    font-weight:normal;
+                    padding:0px 44px;                            
+                }
+                .account_menu .head span{
+                    display:block;
+                    padding-bottom:10px;
+                    border-bottom:1px solid #d3d3d3;
+                }
+                .account_menu .foot{
+                    margin-top:14px;
+                    font-weight:normal;
+                }
+                .account_menu .foot span{
+                    font-weight:bolder;
+                }
+
+                .account_menu .menu{
+                    list-style: none;
+                    padding:0px;
+                    margin:0px;
+                    margin-top:20px;
+                    text-align: left;
+                }
+
+                .account_menu .menu li .personal_icon{
+                    background: url('/html/images/icons.png');
+                    width:13px;
+                    height: 13px;
+                    display:inline-block;
+                    background-position:-3px -28px;
+                    margin-right:5px;
+                }
+                .account_menu .menu li:hover .personal_icon{
+                    background-position:-3px -43px;
+                }
+
+                .account_menu .menu li .setting_icon{
+                    background: url('/html/images/icons.png');
+                    width:15px;
+                    height: 15px;
+                    display:inline-block;
+                    background-position:-16px -29px;
+                    margin-right:5px;
+                }
+                .account_menu .menu li:hover .setting_icon{
+                    background-position:-16px -44px;
+                }
+
+                .account_menu .menu li .language_icon{
+                    background: url('/html/images/icons.png');
+                    width:15px;
+                    height: 15px;
+                    display:inline-block;
+                    background-position:-31px -29px;
+                    margin-right:5px;
+                }
+                .account_menu .menu li:hover .language_icon{
+                    background-position:-31px -44px;
+                }
+                
+                .account_menu .menu li .logout_icon{
+                    background: url('/html/images/icons.png');
+                    width:12px;
+                    height: 12px;
+                    display:inline-block;
+                    background-position:-50px -18px;
+                    margin-right:5px;
+                }
+                .account_menu .menu li:hover .logout_icon{
+                    background-position:-64px -18px;
+                }
+
+                .account_menu .menu li{
+                    height:42px;
+                    padding:0px 44px;                            
+                }
+
+                .account_menu .menu li:hover{
+                    background: #ff8a80;
+                }
+
+                .account_menu .menu li:hover a{
+                    color: white;
+                    border-bottom:1px solid transparent;
+                }
+
+                .account_menu .menu li a{
+                    border-bottom:1px solid #d3d3d3;
+                    text-decoration: none;
+                    display:block;
+                    width:100%;
+                    height:100%;
+                    font-weight:normal;
+                    color: #222222;
+                    padding-bottom:10px;
+                    padding-top:10px;
+                }
+            </style>
+            <div class='account_menu'>
+                <div class='head'>
+                    <span>67578 vovave97@ya.ru</span>
+                </div>
+
+                <ul class='menu'>
+                    <li><a href='/account/'><span class='personal_icon'></span>Личная информация</a></li>
+                    <li><a href='/settings/'><span class='setting_icon'></span>Торговые настройки</a></li>
+                    <li><a href=''><span class='language_icon'></span>Язык</a></li>
+                    <li><a href='/logout/'><span class='logout_icon'></span>Выход</a></li>
+                </ul>
+
+                <div class='foot'>
+                                            Ваш ключ 
+                        VIP                        действителен </br> до <span style='color:#ff8a80'>15.02.2019</span>
+                                    </div>
+            </div>
+        </div>
+    </div>
+</div>        
+        <!---->
+<!---->
+<!---->
+<style>
+    #status_popup{
+        font-size:18px;
+        text-align: center;
+    }
+    
+    #status_popup .modal-dialog{
+        top:150px;
+    }
+    
+    #status_popup .link_to_broker{        
+        display:block;
+        text-align: center;
+        margin:auto;
+        margin-top:50px;
+        background:#6bc452;
+        width:200px;
+        color: white;
+    }
+    
+</style>
+<div class="modal fade" id="status_popup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close" data-dismiss="modal">×</button>
+                <h4 class="modal-title font-header"><p><strong>Предупреждение!!!</strong></p></h4>
+            </div>
+
+            <div class="modal-body">
+                <div>Изменения вступят в силу в течение часа.</div>
+                <div class='btn link_to_broker' data-dismiss="modal">ОК</div>
+            </div>
+        </div>
+    </div>
+</div><script>
+    $('document').ready(function(){
+        $('.instruction_popup_btn').click(function(){
+            $('#instruction_modal').modal('show');
+            return false;
+        });
+    });
+</script>
+<style>
+    #instruction_modal .modal-dialog{
+        width: 1024px;
+    }
+</style>
+<div class="modal fade" id="instruction_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close" data-dismiss="modal">×</button>
+                <h4 class="modal-title font-header"><p><strong>Инструкция</strong></p></h4>
+            </div>
+
+            <div class="modal-body">
+                <h2>Общая информация о работе торгового алгоритма. </h2>
+
+                <p>Торговый алгоритм Auto Bintrade ранее использовался, и отлично зарекомендовал себя торговлей фьючерсами на Чикагской товарной бирже (CME). Он имеет ряд преимуществ как перед живыми трейдерами, так и другими торговыми алгоритмами. И, самое главное, он совершенно бесплатен. Не требует никаких подписок или ежемесячной оплаты. Основные преимущества перед конкурентами: </p>
+                <ul>
+                    <li><b>Скорость:</b> Так как торговый алгоритм мгновенно реагируют на изменение рыночных условий, Auto Bintrade открывает позицию сразу после определения точки входа. </li>
+                    <li><b>Диверсификация:</b> Auto Bintrade торгует различными активами с использованием проверенных алгоритмов. Это дает возможность распределять риски между несколькими финансовыми инструментами, и избежать значительных потерь. </li>
+                    <li><b>Рациональность:</b> В отличие от трейдеров-новичков, чьи предположения и выводы на фоне принятых шаблонов являются субъективными, Auto Bintrade работает максимально эффективно и объективно по заранее определенным правилам. </li>
+                    <li><b>Жесткая дисциплина:</b> Дисциплина поддерживается даже в условиях неустойчивого рынка в виде соблюдения и выполнения торговых правил. Последовательность: Auto Bintrade предоставляет Вам системный подход, так как он всегда торгует автоматически в соответствии с алгоритмом. При торговле imoku Trade использует, для инвестиции, не больше 10% от суммы баланса Вашего счета(в пределах допустимых ставок, которые предоставлены у брокера). Режим торговли на счетах разных типов (DEMO & REAL) могут отличаться, так как для торговли на DEMO счетах Auto Bintrade использует размер инвестиции не менее 100 $. </li>
+                </ul>
+                <p>При торговле на счету REAL, размер инвестиции будет меняться в зависимости от баланса. Пример: Ваш баланс = 400$ Размер инвестиции доступный у брокера 10$, 25$, 50$, 100$, 250$, 500$, 1000$ Auto Bintrade будет открывать сделку с размером инвестиции 25$, так как размер данной инвестиции будет соответствовать правилам Money & Risk managemant которых придерживается торговый алгоритм. Как только баланс увеличится до 500$, для торговли будут использоваться инвестиции в размере 50$, что равняется 10% от баланса Вашего торгового счета. Торговый алгоритм Auto Bintrade не работает, если баланс =< 50$ (равен или менее). </p>
+                <p>Перед запуском торгового алгоритма убедитесь что Вы выбрали верный тип счета REAL/DEMO.</p>
+                <p>Также отличия заключаются в остановке торгового алгоритма. </p>
+                <p>При торговле на DEMO, остановка торговли осуществляется после нажатия кнопки "СТОП" + 1 сделка которая будет осуществлена в течении 15 минут.</p>
+                <p>При торговле на REAL, остановка торговли осуществляется после нажатия кнопки "СТОП" + 10 сделок которые будут осуществлена в течении 1 часа.    </p>
+                <p>Связанно это с закрытием и удалением отложенных ордеров, которые торговый </p>
+                <div style="text-align: center; margin-bottom:20px;">
+                    <a data-dismiss="modal" style="margin:auto;" class="link_to_broker" href="#">Закрыть</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container" style="padding:20px 0px">
+            <div style='max-width:1200px; color: #b6b6b6; text-align: center; margin-bottom:30px;'>
+            <h2 style="font-size:18px; ">Запустите Систему Auto Bintrade</h2>
+            <p style="margin:0px;">Для запуска автоматической торговли необходимо запустить алгоритм Auto Bintrade, нажав на кнопку Старт.</p>
+            <p style="margin:0px;">Торговый алгоритм Auto Bintrade остановится автоматически по истечению каждых календарных суток GMT (по Гринвичу).</p>
+        </div>
+    
+    <div style="background:white; padding:0px; border-radius:10px; box-shadow: 0px 0px 10px rgba(0,0,0,0.2); margin-bottom:50px; padding-bottom: 50px;">
+        <style>
+            .stop_bot.disabled{
+                background: grey;
+            }
+        </style>
+
+        <script>
+            $('document').ready(function () {
+
+                                    setInterval(function () {
+                        $.ajax({
+                            url: '/settings/getbalance/',
+                            type: 'GET',
+                            success: function (msg) {
+                                //                        $('#balance_block').text(msg);
+                                try {
+                                    var json = JSON.parse(msg);
+                                } catch (e) {
+                                    location.href = '/settings/connection/';
+                                    return false;
+                                }
+                                $('#balance_block').text(json.balance);
+                                if (json.reload == 1)
+                                    location.href = location.href;
+                            }
+                        });
+                    }, 60000);
+                
+                $('.connect_block .connect_bot').click(function () {
+                    var email = $('.email_value').val();
+                    var password = $('.password_value').val();
+
+                    var el = $(this);
+                    $(el).css({'display': 'none'});
+                    $('.connect_loading').css({'display': 'block'});
+
+                    $.ajax({
+                        url: location.href,
+                        type: 'POST',
+                        data: {'action': 'connect', email: email, password: password},
+                        success: function (msg) {
+                            var json = JSON.parse(msg);
+                            $(el).css({'display': 'inline-block'});
+                            $('.connect_loading').css({'display': 'none'});
+
+                            if (json.status == 'success') {
+                                $('.broker_setup_row_top_balance span').text(json.balance / 100);
+                                $('.connect_block').css({'display': 'none'});
+                                $('#dashboard_settings_wrapper').css({'display': 'block'});
+                            } else if (json.status == 'error') {
+                                $('.connect_block #activate_bot_panel .error').text(json.message);
+                            }
+                        }
+                    });
+
+                    return false;
+                });
+            });
+        </script>
+
+        <style>
+    .broker_setup_row_options{
+        background: #e5e5e5;
+    }
+</style>
+<script>
+    $('document').ready(function(){
+        //Togles
+        $('.broker_setup_on_off_button').click(function(){
+            if($(this).attr('class').indexOf('static') != -1){
+                return false;
+            }
+            if($(this).attr('class').indexOf('assets') != -1){
+                //определяем какая у нас стратегия
+                var strategy = 0;
+                $('.broker_setup_vip_signal_provider_table .broker_settings_signal_provider_wrapper').each(function(){
+                    if($(this).attr('status') == 'enabled'){
+                        strategy = $(this).attr('value');
+                        return false;
+                    }
+                });
+
+                if(strategy == 1){
+                    return false;    
+                }else if(strategy == 2){
+                    if($(this).attr('class').indexOf('button_off') != -1 && $('.broker_setup_assets_table .broker_setup_on_off_button.button_on').length >= 8){
+                        return false;
+                    }
+                }
+            }
+            
+            if($(this).attr('class').indexOf('button_on') != -1){
+                $(this).next('input[type=hidden]').val('0');
+                $(this).animate({'margin-left':'-20px'},400,function(){
+                    $(this).addClass('button_off').removeClass('button_on');
+                });
+            }else if($(this).attr('class').indexOf('button_off') != -1){
+                $(this).next('input[type=hidden]').val('1');
+                
+                $(this).animate({'margin-left':'0px'},400,function(){
+                    $(this).addClass('button_on').removeClass('button_off');
+                });
+            }
+            
+            var value = $(this).next('input[type=hidden]').val();
+            var action = $(this).next('input[type=hidden]').attr('name');
+            var id = $(this).next('input[type=hidden]').attr('id');
+            
+            if(!action) return;
+            $.ajax({
+                url:location.href,
+                type:'POST',
+                data:{action:action,value:value,id:id},
+                success:function(msg){
+                    console.log(msg);
+                }
+            });
+        });     
+    });
+</script>
+
+<script>
+    $('document').ready(function(){
+        $('.disconnect_bot').click(function(){
+            $.ajax({
+                url:'/settings/disconnect/',
+                type:'GET',
+                success:function(msg){
+                    var json = JSON.parse(msg);
+                    
+                    if(json.status == 'success'){
+                        location.href = '/settings/connection/';
+                    }else if(json.status == 'error'){
+                        $('.disconnect_error').text(json.message);
+                        //alert(json.message);
+                    }
+                }
+            });
+            
+            return false;
+        });
+        
+        //START STOP
+        $('.start_bot').click(function(){
+            var email = $('.email_value').val();
+            var password = $('.password_value').val();
+            
+            //$('.status_popup').css({'display':'block'});
+            $('.overflow').css({'display':'block'});
+            
+            
+            $.ajax({
+                url:location.href,
+                type:'POST',
+                data:{'action':'status','value':1,email:email, password:password},
+                success:function(msg){
+                        
+                    var json = JSON.parse(msg);
+                    if(json.status == 'success'){
+                        $('#activate_bot_panel .start_bot').css({'display':'none'});
+                        $('#activate_bot_panel .stop_bot').css({'display':'block'});
+
+                        $('.instruction_button').css({"display":'none'});
+                        $('.inprogress_ico').css({"display":'inline'});
+                        $('.inprocess').css({"display":'block'});
+                        $('.broker_setup_table_middle .btn-group .btn-default').remove();
+
+                        $('.activity_togle').removeClass('button_off').addClass('button_on');
+                        
+                        $('.status_error').text('').css({"display":'none'});
+                        $('.overflow').css({'display':'block'});
+                        
+                        location.href = location.href;
+                    }else if(json.status == 'error'){
+                        $('.status_error').text(json.message).css({"display":'block'});
+                        $('.overflow').css({'display':'none'});
+                        
+                        if(json.reload != undefined && json.reload == 1) location.href = location.href;
+                    }
+                }
+            });
+
+            return false;
+        });
+
+        $('.stop_bot').click(function(){
+            if($(this).attr('class').indexOf('disabled') != -1) return false;
+            
+            var email = $('.email_value').val();
+            var password = $('.password_value').val();
+
+            $(this).addClass('disabled');
+            
+            $('#status_popup').modal('show');
+            
+            $.ajax({
+                url:location.href,
+                type:'POST',
+                data:{'action':'status','value':0,email:email,password:password},
+                success:function(msg){
+                    var json = JSON.parse(msg);
+                    
+                    $('.instruction_button').css({"display":'block'});
+                    $('.inprogress_ico').css({"display":'none'});
+                    $('.inprocess').css({"display":'none'});
+                }
+            });
+
+            return false;
+        });
+    });
+</script>
+<style>
+    .table.settings{
+        margin-bottom:0px;
+    }
+    .table.settings th{
+        font-size: 12px;
+        font-weight:bold;
+        border:none;
+        height: 50px;
+        vertical-align: middle;
+        text-align: center;        
+    }
+    .table.settings thead{
+        box-shadow: 0px 5px 5px rgba(0,0,0,0.05);
+    }
+    .table.settings tbody tr:first-child td{
+        text-align: center;
+        vertical-align: middle;
+    }
+    .table tbody tr td{
+        border :none;
+    }
+</style>
+<table class="table settings" style="margin-top:30px;">
+    <thead>
+        <tr>
+            <th>
+                <img style="display:inline;max-width:100px;" class="inprogress_ico" src='/html/images/inprogress.gif'> 
+                Брокер
+            </th>
+            <th>Баланс</th>
+            <th>Счет</th>
+            <th></th>
+            <th>Запустить/Остановить</th>
+            <th></th>
+        </tr>
+    </thead>
+    
+    <tbody>
+        <tr style="height:95px; border-bottom: 1px solid #ddd">
+            <td style="width:300px;">
+                <a target="_blank" href="http://platinumbin.com"><img src="/html/images/settings/platinumbin.png"></a>
+            </td>
+            <td>
+                USD 
+                <span id="balance_block">
+                                    1 052.00                                </span>
+            </td>
+            <style>
+                .btn_real,.btn_demo{
+                    background: #d3d3d3;
+                    color: white;
+                    height:36px;
+                }
+                .btn_real.active,.btn_demo.active{
+                    background: #6bc452;
+                }
+                .btn_real:active,.btn_demo:active{
+                    background: #6bc452;
+                }
+                
+            </style>
+            <td>
+                <div style="color:#b6b6b6; font-weight:bolder; font-size: 14px;">pritchard.oliver@webpro1200.com</div>
+                <div class='btn-group'>
+                                                                        <a style="font-weight:bolder;" href='' class='btn active btn_real'>Real</a>
+                                                            </div>
+            </td>
+            <td style='width:100px;'>
+                <!--<a target="_blank" href="http://platinumbin.com/account/deposit/card-sp/" class="deposit_popup_btn btn_green">Депозит</a>-->
+            </td>
+            <style>
+                .btn_green{
+                    background: #6bc452;
+                    color: white;
+                    font-size: 14px;
+                    font-weight:bolder;
+                    height: 36px;
+                    padding: 8px 25px;
+                    box-shadow:0px 0px 5px rgba(107,196,82,0.2);
+                }
+                .btn_green:hover{
+                    color: white;
+                    text-decoration:none;
+                }
+                
+                .disconnect_bot{
+                    background: #e57373;
+                    color: white;
+                    font-size: 14px;
+                    font-weight:bolder;
+                    height: 36px;
+                    padding: 8px 25px;
+                    box-shadow:0px 0px 5px rgba(229,115,115,0.2);
+                    border-radius:0px;
+                    border: none;
+                }
+                
+                .asset_triger{
+                    float: right;
+                    height: 20px;
+                    overflow: hidden;
+                    width: 39px;
+                    border-right: 1px solid #ddd;
+                    border-left: 1px solid #ddd;                    
+                    
+                    padding-top:-5px;
+                    border-radius: 10px;
+                }
+                
+                .asset_triger {
+                    float: none !important;
+                    margin: 0 auto;
+                }
+                
+                .broker_setup_on_off_button {
+                    position:relative;
+                    top:-4px;
+                    background-image: url("/html/images/settings/toggle.png");
+                    cursor: pointer;
+                    height: 24px;
+                    width: 115px;
+                }
+                .broker_setup_on_off_button.button_off {
+                    margin-left: -20px;
+                }
+                .broker_setup_on_off_button.button_on {
+                    margin: 0;
+                }
+            </style>
+            <td>
+                                    <a href="" class="start_bot btn_green" style="font-weight:bolder;display:none">Старт</a>
+
+                    <a href="" class="stop_bot btn_green " style="font-weight:bolder;display:inline-block">Стоп</a>
+                                <div style="color: red; font-weight:bolder; font-size:13px;" class="error status_error"></div>
+            </td>
+            <td>
+                <a style="font-weight:bolder;" href="" class="btn btn-danger disconnect_bot">Отключить</a>
+                <div class="diconenect_error error" style="color:red; font-size:13px; font-weight:bolder;"></div>
+            </td>
+        </tr>
+
+        <tr style='border-bottom: 1px solid #ddd'>
+            <td colspan="6">
+                <div class="row" style="padding:15px">
+                                            <div class="col-sm-3 text-center">
+                            <div class="element" style="margin-bottom:10px;">
+                                <div style="display:inline-block; vertical-align:middle;" class="asset" style="font-weight:normal;">AUD/JPY</div>
+                                <div style="display:inline-block; vertical-align:middle;" class="asset_triger">
+                                    <div asset-id="1" class="assets broker_setup_on_off_button button_on"></div>
+                                    <input type="hidden" name="quote" id="1" value="1">
+                                </div>
+                            </div>
+                        </div>
+                                            <div class="col-sm-3 text-center">
+                            <div class="element" style="margin-bottom:10px;">
+                                <div style="display:inline-block; vertical-align:middle;" class="asset" style="font-weight:normal;">AUD/USD</div>
+                                <div style="display:inline-block; vertical-align:middle;" class="asset_triger">
+                                    <div asset-id="2" class="assets broker_setup_on_off_button button_on"></div>
+                                    <input type="hidden" name="quote" id="2" value="1">
+                                </div>
+                            </div>
+                        </div>
+                                            <div class="col-sm-3 text-center">
+                            <div class="element" style="margin-bottom:10px;">
+                                <div style="display:inline-block; vertical-align:middle;" class="asset" style="font-weight:normal;">EUR/AUD</div>
+                                <div style="display:inline-block; vertical-align:middle;" class="asset_triger">
+                                    <div asset-id="3" class="assets broker_setup_on_off_button button_on"></div>
+                                    <input type="hidden" name="quote" id="3" value="1">
+                                </div>
+                            </div>
+                        </div>
+                                            <div class="col-sm-3 text-center">
+                            <div class="element" style="margin-bottom:10px;">
+                                <div style="display:inline-block; vertical-align:middle;" class="asset" style="font-weight:normal;">EUR/CAD</div>
+                                <div style="display:inline-block; vertical-align:middle;" class="asset_triger">
+                                    <div asset-id="4" class="assets broker_setup_on_off_button button_on"></div>
+                                    <input type="hidden" name="quote" id="4" value="1">
+                                </div>
+                            </div>
+                        </div>
+                                            <div class="col-sm-3 text-center">
+                            <div class="element" style="margin-bottom:10px;">
+                                <div style="display:inline-block; vertical-align:middle;" class="asset" style="font-weight:normal;">EUR/GBP</div>
+                                <div style="display:inline-block; vertical-align:middle;" class="asset_triger">
+                                    <div asset-id="5" class="assets broker_setup_on_off_button button_on"></div>
+                                    <input type="hidden" name="quote" id="5" value="1">
+                                </div>
+                            </div>
+                        </div>
+                                            <div class="col-sm-3 text-center">
+                            <div class="element" style="margin-bottom:10px;">
+                                <div style="display:inline-block; vertical-align:middle;" class="asset" style="font-weight:normal;">EUR/JPY</div>
+                                <div style="display:inline-block; vertical-align:middle;" class="asset_triger">
+                                    <div asset-id="6" class="assets broker_setup_on_off_button button_on"></div>
+                                    <input type="hidden" name="quote" id="6" value="1">
+                                </div>
+                            </div>
+                        </div>
+                                            <div class="col-sm-3 text-center">
+                            <div class="element" style="margin-bottom:10px;">
+                                <div style="display:inline-block; vertical-align:middle;" class="asset" style="font-weight:normal;">EUR/USD</div>
+                                <div style="display:inline-block; vertical-align:middle;" class="asset_triger">
+                                    <div asset-id="7" class="assets broker_setup_on_off_button button_on"></div>
+                                    <input type="hidden" name="quote" id="7" value="1">
+                                </div>
+                            </div>
+                        </div>
+                                            <div class="col-sm-3 text-center">
+                            <div class="element" style="margin-bottom:10px;">
+                                <div style="display:inline-block; vertical-align:middle;" class="asset" style="font-weight:normal;">GBP/JPY</div>
+                                <div style="display:inline-block; vertical-align:middle;" class="asset_triger">
+                                    <div asset-id="8" class="assets broker_setup_on_off_button button_on"></div>
+                                    <input type="hidden" name="quote" id="8" value="1">
+                                </div>
+                            </div>
+                        </div>
+                                            <div class="col-sm-3 text-center">
+                            <div class="element" style="margin-bottom:10px;">
+                                <div style="display:inline-block; vertical-align:middle;" class="asset" style="font-weight:normal;">GBP/USD</div>
+                                <div style="display:inline-block; vertical-align:middle;" class="asset_triger">
+                                    <div asset-id="9" class="assets broker_setup_on_off_button button_on"></div>
+                                    <input type="hidden" name="quote" id="9" value="1">
+                                </div>
+                            </div>
+                        </div>
+                                            <div class="col-sm-3 text-center">
+                            <div class="element" style="margin-bottom:10px;">
+                                <div style="display:inline-block; vertical-align:middle;" class="asset" style="font-weight:normal;">NZD/USD</div>
+                                <div style="display:inline-block; vertical-align:middle;" class="asset_triger">
+                                    <div asset-id="10" class="assets broker_setup_on_off_button button_on"></div>
+                                    <input type="hidden" name="quote" id="10" value="1">
+                                </div>
+                            </div>
+                        </div>
+                                            <div class="col-sm-3 text-center">
+                            <div class="element" style="margin-bottom:10px;">
+                                <div style="display:inline-block; vertical-align:middle;" class="asset" style="font-weight:normal;">USD/CAD</div>
+                                <div style="display:inline-block; vertical-align:middle;" class="asset_triger">
+                                    <div asset-id="11" class="assets broker_setup_on_off_button button_on"></div>
+                                    <input type="hidden" name="quote" id="11" value="1">
+                                </div>
+                            </div>
+                        </div>
+                                            <div class="col-sm-3 text-center">
+                            <div class="element" style="margin-bottom:10px;">
+                                <div style="display:inline-block; vertical-align:middle;" class="asset" style="font-weight:normal;">USD/CHF</div>
+                                <div style="display:inline-block; vertical-align:middle;" class="asset_triger">
+                                    <div asset-id="12" class="assets broker_setup_on_off_button button_on"></div>
+                                    <input type="hidden" name="quote" id="12" value="1">
+                                </div>
+                            </div>
+                        </div>
+                                            <div class="col-sm-3 text-center">
+                            <div class="element" style="margin-bottom:10px;">
+                                <div style="display:inline-block; vertical-align:middle;" class="asset" style="font-weight:normal;">USD/JPY</div>
+                                <div style="display:inline-block; vertical-align:middle;" class="asset_triger">
+                                    <div asset-id="13" class="assets broker_setup_on_off_button button_on"></div>
+                                    <input type="hidden" name="quote" id="13" value="1">
+                                </div>
+                            </div>
+                        </div>
+                                            <div class="col-sm-3 text-center">
+                            <div class="element" style="margin-bottom:10px;">
+                                <div style="display:inline-block; vertical-align:middle;" class="asset" style="font-weight:normal;">GBP/AUD</div>
+                                <div style="display:inline-block; vertical-align:middle;" class="asset_triger">
+                                    <div asset-id="14" class="assets broker_setup_on_off_button button_on"></div>
+                                    <input type="hidden" name="quote" id="14" value="1">
+                                </div>
+                            </div>
+                        </div>
+                                            <div class="col-sm-3 text-center">
+                            <div class="element" style="margin-bottom:10px;">
+                                <div style="display:inline-block; vertical-align:middle;" class="asset" style="font-weight:normal;">GBP/CAD</div>
+                                <div style="display:inline-block; vertical-align:middle;" class="asset_triger">
+                                    <div asset-id="15" class="assets broker_setup_on_off_button button_on"></div>
+                                    <input type="hidden" name="quote" id="15" value="1">
+                                </div>
+                            </div>
+                        </div>
+                                            <div class="col-sm-3 text-center">
+                            <div class="element" style="margin-bottom:10px;">
+                                <div style="display:inline-block; vertical-align:middle;" class="asset" style="font-weight:normal;">NZD/CHF</div>
+                                <div style="display:inline-block; vertical-align:middle;" class="asset_triger">
+                                    <div asset-id="16" class="assets broker_setup_on_off_button button_on"></div>
+                                    <input type="hidden" name="quote" id="16" value="1">
+                                </div>
+                            </div>
+                        </div>
+                                                            
+                </div>
+            </td>
+        </tr>        
+    </tbody>
+</table>
+
+
+<script>
+    $('document').ready(function(){
+        $('.table.settings .btn_real').click(function(){
+            
+            $('.table.settings .btn_demo').removeClass('active');
+            $('.table.settings .btn_real').addClass('active');
+
+            $.ajax({
+                url:'/settings/setstatus/real/',
+                type:'POST',
+                success:function(msg){
+                    var json = JSON.parse(msg);
+
+                    if(json.status == 'success'){
+                        location.href=location.href;
+                    }
+                }
+            });
+
+            return false;
+        });
+
+        $('.table.settings .btn_demo').click(function(){
+            $('.table.settings .btn_demo').addClass('active');
+            $('.table.settings .btn_real').removeClass('active');
+
+            $.ajax({
+                url:'/settings/setstatus/demo/',
+                type:'POST',
+                success:function(msg){
+                    var json = JSON.parse(msg);
+
+                    if(json.status == 'success'){
+                        location.href=location.href;
+                    }
+                }
+            });
+
+            return false;
+        });
+    });
+</script>
+        <style>
+            .inprocess img{
+                display:inline-block;
+                vertical-align: middle;
+            }
+            .inprocess .text{
+                margin-left:20px;
+                display:inline-block;
+                vertical-align: middle;
+                font-weight: bolder; 
+                color: black;
+                font-size: 12px;
+            }
+        </style>
+
+        <button style='display:none;margin-left:35px;background:none; font-weight:bolder;color: rgb(12, 121, 168)' class="btn instruction_button" data-toggle="modal" data-target="#instruction_modal">Информация о работе алгоритма.</button>        
+        <div class='inprocess' style='margin:10px 0px; margin-left:30px;display:block'>
+            <div class='text'>
+                <p>Торговый алгоритм Auto Bintrade успешно запущен. В данный момент он осуществляет анализ рынка, и определяет точки входа в сделки!</p>
+                <p><a data-toggle="modal" data-target="#instruction_modal" style='color:rgb(12, 121, 168)' href=''>Более детальная информация о работе торгового алгоритма здесь.</a></p>
+            </div>
+        </div>
+
+        <script>
+            $('document').ready(function () {
+                setInterval(function () {
+                    $.ajax({
+                        url: '/settings/deals/',
+                        type: 'GET',
+                        success: function (msg) {
+                            $('#deal_block').html(msg);
+                        }
+                    });
+                }, 120000);
+            });
+        </script>
+        <style>
+
+            #deal_block{
+                padding:0px 50px;            
+            }
+            #deal_block .table{
+                padding:0px;
+                margin:0px;            
+            }
+            .table > thead > tr > th{
+                background: none;
+                border:1px solid #f3f3f3;
+                border-top:1px solid transparent;
+                vertical-align:middle;
+                color: #222222;
+                font-size: 12px;
+                height: 68px;
+                text-align: center;
+            }
+            .table > tbody > tr > td{
+                border-right: 1px solid #f3f3f3;
+                border-left: 1px solid #f3f3f3;
+                text-align: center;
+            }
+            .table > tbody{
+                border-bottom: 1px solid #f3f3f3;
+            }
+        </style>
+        <div id="deal_block">
+            <table class='table' style=' max-width:1200px;'>
+                <thead>
+                    <tr>
+                        <th>Котировка</th>
+                        <th>Инвестиция</th>
+                        <th>Начальный баланс</th>
+                        <th>Конечный баланс</th>
+                        <th>Цена открытия</th>
+                        <th>Цена закрытия</th>
+                        <th>Дата начала</th>
+                        <th>Дата окончания</th>
+                        <th>Позиция</th>
+                        <th>Выигрыш</th>
+                        <th>Статус</th>
+                    </tr>
+                </thead>
+                <tbody>
+                                            <tr>    
+                            <td>AUDJPY</td>
+                            <td>100.00</td>
+                            <td>1 152.00</td>
+                            <td>1 052.00</td>
+                            <td>81.275</td>
+                            <td>81.263</td>
+                            <td>2018-05-08 12:56:30</td>
+                            <td>2018-05-08 12:58:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>0.00</td>
+                            <td>Lose</td>
+                        </tr>
+                                            <tr>    
+                            <td>USDCAD</td>
+                            <td>100.00</td>
+                            <td>1 252.00</td>
+                            <td>1 152.00</td>
+                            <td>1.29637</td>
+                            <td>1.29639</td>
+                            <td>2018-05-08 12:46:00</td>
+                            <td>2018-05-08 12:48:00</td>
+                            <td><span style="color:red">Вниз</span></td>
+                            <td>0.00</td>
+                            <td>Lose</td>
+                        </tr>
+                                            <tr>    
+                            <td>NZDUSD</td>
+                            <td>100.00</td>
+                            <td>1 352.00</td>
+                            <td>1 252.00</td>
+                            <td>0.69749</td>
+                            <td>0.6976</td>
+                            <td>2018-05-08 12:34:00</td>
+                            <td>2018-05-08 12:36:00</td>
+                            <td><span style="color:red">Вниз</span></td>
+                            <td>0.00</td>
+                            <td>Lose</td>
+                        </tr>
+                                            <tr>    
+                            <td>GBPUSD</td>
+                            <td>100.00</td>
+                            <td>1 276.00</td>
+                            <td>1 352.00</td>
+                            <td>1.35027</td>
+                            <td>1.35039</td>
+                            <td>2018-05-08 12:25:00</td>
+                            <td>2018-05-08 12:27:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>176.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>EURUSD</td>
+                            <td>100.00</td>
+                            <td>1 376.00</td>
+                            <td>1 276.00</td>
+                            <td>1.1874</td>
+                            <td>1.18731</td>
+                            <td>2018-05-08 12:09:30</td>
+                            <td>2018-05-08 12:11:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>0.00</td>
+                            <td>Lose</td>
+                        </tr>
+                                            <tr>    
+                            <td>USDCAD</td>
+                            <td>100.00</td>
+                            <td>1 300.00</td>
+                            <td>1 376.00</td>
+                            <td>1.29647</td>
+                            <td>1.29676</td>
+                            <td>2018-05-08 11:59:30</td>
+                            <td>2018-05-08 12:01:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>176.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>AUDJPY</td>
+                            <td>100.00</td>
+                            <td>1 400.00</td>
+                            <td>1 300.00</td>
+                            <td>81.213</td>
+                            <td>81.2145</td>
+                            <td>2018-05-08 11:51:30</td>
+                            <td>2018-05-08 11:53:00</td>
+                            <td><span style="color:red">Вниз</span></td>
+                            <td>0.00</td>
+                            <td>Lose</td>
+                        </tr>
+                                            <tr>    
+                            <td>EURUSD</td>
+                            <td>100.00</td>
+                            <td>1 324.00</td>
+                            <td>1 400.00</td>
+                            <td>1.18739</td>
+                            <td>1.18769</td>
+                            <td>2018-05-08 11:46:00</td>
+                            <td>2018-05-08 11:48:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>176.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>USDCAD</td>
+                            <td>100.00</td>
+                            <td>1 248.00</td>
+                            <td>1 324.00</td>
+                            <td>1.29765</td>
+                            <td>1.2979</td>
+                            <td>2018-05-08 11:39:00</td>
+                            <td>2018-05-08 11:41:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>176.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>GBPUSD</td>
+                            <td>100.00</td>
+                            <td>1 348.00</td>
+                            <td>1 248.00</td>
+                            <td>1.3515</td>
+                            <td>1.3514</td>
+                            <td>2018-05-08 11:28:00</td>
+                            <td>2018-05-08 11:30:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>0.00</td>
+                            <td>Lose</td>
+                        </tr>
+                                            <tr>    
+                            <td>GBPUSD</td>
+                            <td>100.00</td>
+                            <td>1 272.00</td>
+                            <td>1 348.00</td>
+                            <td>1.35251</td>
+                            <td>1.35209</td>
+                            <td>2018-05-08 11:14:30</td>
+                            <td>2018-05-08 11:16:00</td>
+                            <td><span style="color:red">Вниз</span></td>
+                            <td>176.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>EURGBP</td>
+                            <td>100.00</td>
+                            <td>1 372.00</td>
+                            <td>1 272.00</td>
+                            <td>0.87874</td>
+                            <td>0.87865</td>
+                            <td>2018-05-08 11:05:30</td>
+                            <td>2018-05-08 11:07:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>0.00</td>
+                            <td>Lose</td>
+                        </tr>
+                                            <tr>    
+                            <td>EURAUD</td>
+                            <td>100.00</td>
+                            <td>1 296.00</td>
+                            <td>1 372.00</td>
+                            <td>1.59245</td>
+                            <td>1.59244</td>
+                            <td>2018-05-08 10:53:30</td>
+                            <td>2018-05-08 10:55:00</td>
+                            <td><span style="color:red">Вниз</span></td>
+                            <td>176.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>NZDUSD</td>
+                            <td>100.00</td>
+                            <td>1 396.00</td>
+                            <td>1 296.00</td>
+                            <td>0.69788</td>
+                            <td>0.69777</td>
+                            <td>2018-05-08 10:42:00</td>
+                            <td>2018-05-08 10:44:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>0.00</td>
+                            <td>Lose</td>
+                        </tr>
+                                            <tr>    
+                            <td>NZDUSD</td>
+                            <td>100.00</td>
+                            <td>1 320.00</td>
+                            <td>1 396.00</td>
+                            <td>0.6986</td>
+                            <td>0.69861</td>
+                            <td>2018-05-08 10:27:30</td>
+                            <td>2018-05-08 10:29:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>176.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>EURUSD</td>
+                            <td>100.00</td>
+                            <td>1 244.00</td>
+                            <td>1 320.00</td>
+                            <td>1.1893</td>
+                            <td>1.18949</td>
+                            <td>2018-05-08 10:16:30</td>
+                            <td>2018-05-08 10:18:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>176.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>GBPJPY</td>
+                            <td>100.00</td>
+                            <td>1 168.00</td>
+                            <td>1 244.00</td>
+                            <td>147.3045</td>
+                            <td>147.26001</td>
+                            <td>2018-05-08 10:00:00</td>
+                            <td>2018-05-08 10:02:00</td>
+                            <td><span style="color:red">Вниз</span></td>
+                            <td>176.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>EURJPY</td>
+                            <td>100.00</td>
+                            <td>1 268.00</td>
+                            <td>1 168.00</td>
+                            <td>129.58551</td>
+                            <td>129.615</td>
+                            <td>2018-05-08 09:48:30</td>
+                            <td>2018-05-08 09:50:00</td>
+                            <td><span style="color:red">Вниз</span></td>
+                            <td>0.00</td>
+                            <td>Lose</td>
+                        </tr>
+                                            <tr>    
+                            <td>EURGBP</td>
+                            <td>100.00</td>
+                            <td>1 192.00</td>
+                            <td>1 268.00</td>
+                            <td>0.88036</td>
+                            <td>0.88032</td>
+                            <td>2018-05-08 09:34:30</td>
+                            <td>2018-05-08 09:36:00</td>
+                            <td><span style="color:red">Вниз</span></td>
+                            <td>176.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>AUDJPY</td>
+                            <td>100.00</td>
+                            <td>1 292.00</td>
+                            <td>1 192.00</td>
+                            <td>81.5345</td>
+                            <td>81.53301</td>
+                            <td>2018-05-08 09:20:00</td>
+                            <td>2018-05-08 09:22:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>0.00</td>
+                            <td>Lose</td>
+                        </tr>
+                                            <tr>    
+                            <td>EURUSD</td>
+                            <td>100.00</td>
+                            <td>1 216.00</td>
+                            <td>1 292.00</td>
+                            <td>1.19072</td>
+                            <td>1.19083</td>
+                            <td>2018-05-08 09:04:00</td>
+                            <td>2018-05-08 09:06:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>176.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>AUDUSD</td>
+                            <td>100.00</td>
+                            <td>1 316.00</td>
+                            <td>1 216.00</td>
+                            <td>0.7501</td>
+                            <td>0.75019</td>
+                            <td>2018-05-08 08:50:30</td>
+                            <td>2018-05-08 08:52:00</td>
+                            <td><span style="color:red">Вниз</span></td>
+                            <td>0.00</td>
+                            <td>Lose</td>
+                        </tr>
+                                            <tr>    
+                            <td>GBPCAD</td>
+                            <td>100.00</td>
+                            <td>1 416.00</td>
+                            <td>1 316.00</td>
+                            <td>1.75151</td>
+                            <td>1.7514</td>
+                            <td>2018-05-08 08:41:30</td>
+                            <td>2018-05-08 08:43:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>0.00</td>
+                            <td>Lose</td>
+                        </tr>
+                                            <tr>    
+                            <td>USDJPY</td>
+                            <td>100.00</td>
+                            <td>1 516.00</td>
+                            <td>1 416.00</td>
+                            <td>108.987</td>
+                            <td>108.9975</td>
+                            <td>2018-05-08 08:31:30</td>
+                            <td>2018-05-08 08:33:00</td>
+                            <td><span style="color:red">Вниз</span></td>
+                            <td>0.00</td>
+                            <td>Lose</td>
+                        </tr>
+                                            <tr>    
+                            <td>GBPJPY</td>
+                            <td>100.00</td>
+                            <td>1 616.00</td>
+                            <td>1 516.00</td>
+                            <td>147.8205</td>
+                            <td>147.7815</td>
+                            <td>2018-05-08 08:18:30</td>
+                            <td>2018-05-08 08:20:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>0.00</td>
+                            <td>Lose</td>
+                        </tr>
+                                            <tr>    
+                            <td>GBPJPY</td>
+                            <td>100.00</td>
+                            <td>1 716.00</td>
+                            <td>1 616.00</td>
+                            <td>147.828</td>
+                            <td>147.84949</td>
+                            <td>2018-05-08 08:10:00</td>
+                            <td>2018-05-08 08:12:00</td>
+                            <td><span style="color:red">Вниз</span></td>
+                            <td>0.00</td>
+                            <td>Lose</td>
+                        </tr>
+                                            <tr>    
+                            <td>EURGBP</td>
+                            <td>100.00</td>
+                            <td>1 640.00</td>
+                            <td>1 716.00</td>
+                            <td>0.87833</td>
+                            <td>0.87823</td>
+                            <td>2018-05-08 07:55:30</td>
+                            <td>2018-05-08 07:57:00</td>
+                            <td><span style="color:red">Вниз</span></td>
+                            <td>176.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>EURCAD</td>
+                            <td>100.00</td>
+                            <td>1 740.00</td>
+                            <td>1 640.00</td>
+                            <td>1.53872</td>
+                            <td>1.53841</td>
+                            <td>2018-05-08 07:47:30</td>
+                            <td>2018-05-08 07:49:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>0.00</td>
+                            <td>Lose</td>
+                        </tr>
+                                            <tr>    
+                            <td>EURUSD</td>
+                            <td>100.00</td>
+                            <td>1 840.00</td>
+                            <td>1 740.00</td>
+                            <td>1.19262</td>
+                            <td>1.19284</td>
+                            <td>2018-05-08 07:33:30</td>
+                            <td>2018-05-08 07:35:00</td>
+                            <td><span style="color:red">Вниз</span></td>
+                            <td>0.00</td>
+                            <td>Lose</td>
+                        </tr>
+                                            <tr>    
+                            <td>USDJPY</td>
+                            <td>100.00</td>
+                            <td>1 764.00</td>
+                            <td>1 840.00</td>
+                            <td>108.96201</td>
+                            <td>108.9625</td>
+                            <td>2018-05-08 07:24:30</td>
+                            <td>2018-05-08 07:26:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>176.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>GBPJPY</td>
+                            <td>100.00</td>
+                            <td>1 688.00</td>
+                            <td>1 764.00</td>
+                            <td>147.98001</td>
+                            <td>147.996</td>
+                            <td>2018-05-08 07:17:00</td>
+                            <td>2018-05-08 07:19:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>176.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>GBPAUD</td>
+                            <td>100.00</td>
+                            <td>1 612.00</td>
+                            <td>1 688.00</td>
+                            <td>1.80763</td>
+                            <td>1.8083</td>
+                            <td>2018-05-08 07:10:30</td>
+                            <td>2018-05-08 07:12:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>176.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>EURUSD</td>
+                            <td>100.00</td>
+                            <td>1 536.00</td>
+                            <td>1 612.00</td>
+                            <td>1.19191</td>
+                            <td>1.19203</td>
+                            <td>2018-05-08 07:03:00</td>
+                            <td>2018-05-08 07:05:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>176.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>EURAUD</td>
+                            <td>100.00</td>
+                            <td>1 460.00</td>
+                            <td>1 536.00</td>
+                            <td>1.58831</td>
+                            <td>1.58823</td>
+                            <td>2018-05-08 06:53:00</td>
+                            <td>2018-05-08 06:55:00</td>
+                            <td><span style="color:red">Вниз</span></td>
+                            <td>176.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>USDJPY</td>
+                            <td>100.00</td>
+                            <td>1 384.00</td>
+                            <td>1 460.00</td>
+                            <td>109.0675</td>
+                            <td>109.068</td>
+                            <td>2018-05-08 06:38:30</td>
+                            <td>2018-05-08 06:40:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>176.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>USDCAD</td>
+                            <td>100.00</td>
+                            <td>1 484.00</td>
+                            <td>1 384.00</td>
+                            <td>1.29077</td>
+                            <td>1.29091</td>
+                            <td>2018-05-08 06:31:30</td>
+                            <td>2018-05-08 06:33:00</td>
+                            <td><span style="color:red">Вниз</span></td>
+                            <td>0.00</td>
+                            <td>Lose</td>
+                        </tr>
+                                            <tr>    
+                            <td>AUDJPY</td>
+                            <td>100.00</td>
+                            <td>1 408.00</td>
+                            <td>1 484.00</td>
+                            <td>81.7925</td>
+                            <td>81.77201</td>
+                            <td>2018-05-08 06:20:30</td>
+                            <td>2018-05-08 06:22:00</td>
+                            <td><span style="color:red">Вниз</span></td>
+                            <td>176.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>AUDJPY</td>
+                            <td>100.00</td>
+                            <td>1 332.00</td>
+                            <td>1 408.00</td>
+                            <td>81.753</td>
+                            <td>81.78501</td>
+                            <td>2018-05-08 06:05:00</td>
+                            <td>2018-05-08 06:07:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>176.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>AUDJPY</td>
+                            <td>100.00</td>
+                            <td>1 256.00</td>
+                            <td>1 332.00</td>
+                            <td>81.775</td>
+                            <td>81.773</td>
+                            <td>2018-05-08 05:55:41</td>
+                            <td>2018-05-08 05:57:00</td>
+                            <td><span style="color:red">Вниз</span></td>
+                            <td>176.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>USDCAD</td>
+                            <td>50.00</td>
+                            <td>1 218.00</td>
+                            <td>1 256.00</td>
+                            <td>1.28798</td>
+                            <td>1.28788</td>
+                            <td>2018-05-08 02:18:30</td>
+                            <td>2018-05-08 02:20:00</td>
+                            <td><span style="color:red">Вниз</span></td>
+                            <td>88.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>AUDUSD</td>
+                            <td>50.00</td>
+                            <td>1 268.00</td>
+                            <td>1 218.00</td>
+                            <td>0.75221</td>
+                            <td>0.75222</td>
+                            <td>2018-05-08 02:02:30</td>
+                            <td>2018-05-08 02:04:00</td>
+                            <td><span style="color:red">Вниз</span></td>
+                            <td>0.00</td>
+                            <td>Lose</td>
+                        </tr>
+                                            <tr>    
+                            <td>EURJPY</td>
+                            <td>50.00</td>
+                            <td>1 230.00</td>
+                            <td>1 268.00</td>
+                            <td>129.986</td>
+                            <td>130.0125</td>
+                            <td>2018-05-08 01:47:30</td>
+                            <td>2018-05-08 01:49:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>88.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>EURUSD</td>
+                            <td>50.00</td>
+                            <td>1 192.00</td>
+                            <td>1 230.00</td>
+                            <td>1.19302</td>
+                            <td>1.19272</td>
+                            <td>2018-05-08 01:38:30</td>
+                            <td>2018-05-08 01:40:00</td>
+                            <td><span style="color:red">Вниз</span></td>
+                            <td>88.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>AUDJPY</td>
+                            <td>50.00</td>
+                            <td>1 154.00</td>
+                            <td>1 192.00</td>
+                            <td>81.9435</td>
+                            <td>81.88451</td>
+                            <td>2018-05-08 01:31:30</td>
+                            <td>2018-05-08 01:33:00</td>
+                            <td><span style="color:red">Вниз</span></td>
+                            <td>88.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>EURAUD</td>
+                            <td>50.00</td>
+                            <td>1 116.00</td>
+                            <td>1 154.00</td>
+                            <td>1.58614</td>
+                            <td>1.58613</td>
+                            <td>2018-05-08 01:22:00</td>
+                            <td>2018-05-08 01:24:00</td>
+                            <td><span style="color:red">Вниз</span></td>
+                            <td>88.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>USDCHF</td>
+                            <td>50.00</td>
+                            <td>1 166.00</td>
+                            <td>1 116.00</td>
+                            <td>1.00187</td>
+                            <td>1.00197</td>
+                            <td>2018-05-08 01:06:00</td>
+                            <td>2018-05-08 01:08:00</td>
+                            <td><span style="color:red">Вниз</span></td>
+                            <td>0.00</td>
+                            <td>Lose</td>
+                        </tr>
+                                            <tr>    
+                            <td>USDCAD</td>
+                            <td>50.00</td>
+                            <td>1 128.00</td>
+                            <td>1 166.00</td>
+                            <td>1.28825</td>
+                            <td>1.28817</td>
+                            <td>2018-05-08 00:52:11</td>
+                            <td>2018-05-08 00:54:00</td>
+                            <td><span style="color:red">Вниз</span></td>
+                            <td>88.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>USDCAD</td>
+                            <td>50.00</td>
+                            <td>1 128.00</td>
+                            <td>1 128.00</td>
+                            <td>1.28825</td>
+                            <td>1.28825</td>
+                            <td>2018-05-08 00:50:00</td>
+                            <td>2018-05-08 00:52:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>50.00</td>
+                            <td>Equal</td>
+                        </tr>
+                                            <tr>    
+                            <td>EURUSD</td>
+                            <td>50.00</td>
+                            <td>1 090.00</td>
+                            <td>1 128.00</td>
+                            <td>1.19301</td>
+                            <td>1.19292</td>
+                            <td>2018-05-08 00:45:00</td>
+                            <td>2018-05-08 00:47:00</td>
+                            <td><span style="color:red">Вниз</span></td>
+                            <td>88.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>GBPJPY</td>
+                            <td>50.00</td>
+                            <td>1 140.00</td>
+                            <td>1 090.00</td>
+                            <td>147.911</td>
+                            <td>147.881</td>
+                            <td>2018-05-08 00:34:00</td>
+                            <td>2018-05-08 00:36:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>0.00</td>
+                            <td>Lose</td>
+                        </tr>
+                                            <tr>    
+                            <td>EURCAD</td>
+                            <td>50.00</td>
+                            <td>1 102.00</td>
+                            <td>1 140.00</td>
+                            <td>1.53668</td>
+                            <td>1.53659</td>
+                            <td>2018-05-08 00:20:30</td>
+                            <td>2018-05-08 00:22:00</td>
+                            <td><span style="color:red">Вниз</span></td>
+                            <td>88.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>AUDUSD</td>
+                            <td>50.00</td>
+                            <td>1 152.00</td>
+                            <td>1 102.00</td>
+                            <td>0.75148</td>
+                            <td>0.7513</td>
+                            <td>2018-05-08 00:14:19</td>
+                            <td>2018-05-08 00:16:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>0.00</td>
+                            <td>Lose</td>
+                        </tr>
+                                            <tr>    
+                            <td>AUDUSD</td>
+                            <td>50.00</td>
+                            <td>1 152.00</td>
+                            <td>1 152.00</td>
+                            <td>0.75148</td>
+                            <td>0.75148</td>
+                            <td>2018-05-08 00:12:30</td>
+                            <td>2018-05-08 00:14:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>50.00</td>
+                            <td>Equal</td>
+                        </tr>
+                                            <tr>    
+                            <td>AUDJPY</td>
+                            <td>50.00</td>
+                            <td>1 114.00</td>
+                            <td>1 152.00</td>
+                            <td>81.984</td>
+                            <td>81.982</td>
+                            <td>2018-05-07 23:56:30</td>
+                            <td>2018-05-07 23:58:00</td>
+                            <td><span style="color:red">Вниз</span></td>
+                            <td>88.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>GBPJPY</td>
+                            <td>50.00</td>
+                            <td>1 076.00</td>
+                            <td>1 114.00</td>
+                            <td>147.949</td>
+                            <td>147.948</td>
+                            <td>2018-05-07 23:51:30</td>
+                            <td>2018-05-07 23:53:00</td>
+                            <td><span style="color:red">Вниз</span></td>
+                            <td>88.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>EURUSD</td>
+                            <td>50.00</td>
+                            <td>1 038.00</td>
+                            <td>1 076.00</td>
+                            <td>1.19238</td>
+                            <td>1.19239</td>
+                            <td>2018-05-07 23:45:18</td>
+                            <td>2018-05-07 23:47:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>88.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>EURUSD</td>
+                            <td>50.00</td>
+                            <td>1 038.00</td>
+                            <td>1 038.00</td>
+                            <td>1.19238</td>
+                            <td>1.19238</td>
+                            <td>2018-05-07 23:43:00</td>
+                            <td>2018-05-07 23:45:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>50.00</td>
+                            <td>Equal</td>
+                        </tr>
+                                            <tr>    
+                            <td>USDCAD</td>
+                            <td>50.00</td>
+                            <td>1 000.00</td>
+                            <td>1 038.00</td>
+                            <td>1.28835</td>
+                            <td>1.28845</td>
+                            <td>2018-05-07 23:40:29</td>
+                            <td>2018-05-07 23:42:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>88.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>USDCAD</td>
+                            <td>50.00</td>
+                            <td>1 000.00</td>
+                            <td>1 000.00</td>
+                            <td>1.28836</td>
+                            <td>1.28836</td>
+                            <td>2018-05-07 23:38:05</td>
+                            <td>2018-05-07 23:40:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>50.00</td>
+                            <td>Equal</td>
+                        </tr>
+                                            <tr>    
+                            <td>USDCAD</td>
+                            <td>50.00</td>
+                            <td>1 000.00</td>
+                            <td>1 000.00</td>
+                            <td>1.28836</td>
+                            <td>1.28836</td>
+                            <td>2018-05-07 23:36:00</td>
+                            <td>2018-05-07 23:38:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>50.00</td>
+                            <td>Equal</td>
+                        </tr>
+                                            <tr>    
+                            <td>AUDJPY</td>
+                            <td>50.00</td>
+                            <td>962.00</td>
+                            <td>1 000.00</td>
+                            <td>81.9505</td>
+                            <td>81.955</td>
+                            <td>2018-05-07 23:29:30</td>
+                            <td>2018-05-07 23:31:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>88.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>EURUSD</td>
+                            <td>50.00</td>
+                            <td>1 012.00</td>
+                            <td>962.00</td>
+                            <td>1.19241</td>
+                            <td>1.19238</td>
+                            <td>2018-05-07 23:19:09</td>
+                            <td>2018-05-07 23:21:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>0.00</td>
+                            <td>Lose</td>
+                        </tr>
+                                            <tr>    
+                            <td>EURUSD</td>
+                            <td>50.00</td>
+                            <td>1 012.00</td>
+                            <td>1 012.00</td>
+                            <td>1.19241</td>
+                            <td>1.19241</td>
+                            <td>2018-05-07 23:17:30</td>
+                            <td>2018-05-07 23:19:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>50.00</td>
+                            <td>Equal</td>
+                        </tr>
+                                            <tr>    
+                            <td>EURGBP</td>
+                            <td>50.00</td>
+                            <td>974.00</td>
+                            <td>1 012.00</td>
+                            <td>0.87932</td>
+                            <td>0.87933</td>
+                            <td>2018-05-07 23:03:30</td>
+                            <td>2018-05-07 23:05:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>88.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>GBPAUD</td>
+                            <td>50.00</td>
+                            <td>936.00</td>
+                            <td>974.00</td>
+                            <td>1.80507</td>
+                            <td>1.80539</td>
+                            <td>2018-05-07 22:50:00</td>
+                            <td>2018-05-07 22:52:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>88.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>EURUSD</td>
+                            <td>50.00</td>
+                            <td>898.00</td>
+                            <td>936.00</td>
+                            <td>1.19221</td>
+                            <td>1.19227</td>
+                            <td>2018-05-07 22:40:30</td>
+                            <td>2018-05-07 22:42:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>88.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>GBPCAD</td>
+                            <td>50.00</td>
+                            <td>860.00</td>
+                            <td>898.00</td>
+                            <td>1.74669</td>
+                            <td>1.74664</td>
+                            <td>2018-05-07 22:24:30</td>
+                            <td>2018-05-07 22:26:00</td>
+                            <td><span style="color:red">Вниз</span></td>
+                            <td>88.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>GBPUSD</td>
+                            <td>50.00</td>
+                            <td>822.00</td>
+                            <td>860.00</td>
+                            <td>1.35589</td>
+                            <td>1.35584</td>
+                            <td>2018-05-07 22:18:00</td>
+                            <td>2018-05-07 22:20:00</td>
+                            <td><span style="color:red">Вниз</span></td>
+                            <td>88.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>NZDUSD</td>
+                            <td>50.00</td>
+                            <td>784.00</td>
+                            <td>822.00</td>
+                            <td>0.70184</td>
+                            <td>0.70185</td>
+                            <td>2018-05-07 22:03:30</td>
+                            <td>2018-05-07 22:05:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>88.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>GBPCAD</td>
+                            <td>50.00</td>
+                            <td>834.00</td>
+                            <td>784.00</td>
+                            <td>1.74677</td>
+                            <td>1.74675</td>
+                            <td>2018-05-07 21:47:30</td>
+                            <td>2018-05-07 21:49:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>0.00</td>
+                            <td>Lose</td>
+                        </tr>
+                                            <tr>    
+                            <td>EURAUD</td>
+                            <td>50.00</td>
+                            <td>796.00</td>
+                            <td>834.00</td>
+                            <td>1.58644</td>
+                            <td>1.5865</td>
+                            <td>2018-05-07 21:42:14</td>
+                            <td>2018-05-07 21:44:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>88.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>EURAUD</td>
+                            <td>50.00</td>
+                            <td>796.00</td>
+                            <td>796.00</td>
+                            <td>1.58651</td>
+                            <td>1.58651</td>
+                            <td>2018-05-07 21:40:30</td>
+                            <td>2018-05-07 21:42:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>50.00</td>
+                            <td>Equal</td>
+                        </tr>
+                                            <tr>    
+                            <td>GBPUSD</td>
+                            <td>50.00</td>
+                            <td>846.00</td>
+                            <td>796.00</td>
+                            <td>1.3556</td>
+                            <td>1.35568</td>
+                            <td>2018-05-07 21:33:18</td>
+                            <td>2018-05-07 21:35:00</td>
+                            <td><span style="color:red">Вниз</span></td>
+                            <td>0.00</td>
+                            <td>Lose</td>
+                        </tr>
+                                            <tr>    
+                            <td>GBPUSD</td>
+                            <td>50.00</td>
+                            <td>846.00</td>
+                            <td>846.00</td>
+                            <td>1.35566</td>
+                            <td>1.35566</td>
+                            <td>2018-05-07 21:31:00</td>
+                            <td>2018-05-07 21:33:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>50.00</td>
+                            <td>Equal</td>
+                        </tr>
+                                            <tr>    
+                            <td>USDJPY</td>
+                            <td>50.00</td>
+                            <td>808.00</td>
+                            <td>846.00</td>
+                            <td>109.052</td>
+                            <td>109.0585</td>
+                            <td>2018-05-07 21:15:30</td>
+                            <td>2018-05-07 21:17:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>88.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>GBPJPY</td>
+                            <td>50.00</td>
+                            <td>858.00</td>
+                            <td>808.00</td>
+                            <td>147.8515</td>
+                            <td>147.835</td>
+                            <td>2018-05-07 21:07:00</td>
+                            <td>2018-05-07 21:09:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>0.00</td>
+                            <td>Lose</td>
+                        </tr>
+                                            <tr>    
+                            <td>EURAUD</td>
+                            <td>50.00</td>
+                            <td>908.00</td>
+                            <td>858.00</td>
+                            <td>1.58652</td>
+                            <td>1.58644</td>
+                            <td>2018-05-07 20:53:00</td>
+                            <td>2018-05-07 20:55:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>0.00</td>
+                            <td>Lose</td>
+                        </tr>
+                                            <tr>    
+                            <td>USDCHF</td>
+                            <td>50.00</td>
+                            <td>870.00</td>
+                            <td>908.00</td>
+                            <td>1.00265</td>
+                            <td>1.00266</td>
+                            <td>2018-05-07 20:42:00</td>
+                            <td>2018-05-07 20:44:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>88.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>NZDUSD</td>
+                            <td>50.00</td>
+                            <td>832.00</td>
+                            <td>870.00</td>
+                            <td>0.70155</td>
+                            <td>0.70159</td>
+                            <td>2018-05-07 20:33:00</td>
+                            <td>2018-05-07 20:35:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>88.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>NZDUSD</td>
+                            <td>50.00</td>
+                            <td>794.00</td>
+                            <td>832.00</td>
+                            <td>0.70158</td>
+                            <td>0.70157</td>
+                            <td>2018-05-07 20:27:30</td>
+                            <td>2018-05-07 20:29:00</td>
+                            <td><span style="color:red">Вниз</span></td>
+                            <td>88.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>GBPUSD</td>
+                            <td>50.00</td>
+                            <td>756.00</td>
+                            <td>794.00</td>
+                            <td>1.35569</td>
+                            <td>1.35581</td>
+                            <td>2018-05-07 20:21:30</td>
+                            <td>2018-05-07 20:23:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>88.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>GBPAUD</td>
+                            <td>50.00</td>
+                            <td>806.00</td>
+                            <td>756.00</td>
+                            <td>1.80399</td>
+                            <td>1.80408</td>
+                            <td>2018-05-07 20:14:00</td>
+                            <td>2018-05-07 20:16:00</td>
+                            <td><span style="color:red">Вниз</span></td>
+                            <td>0.00</td>
+                            <td>Lose</td>
+                        </tr>
+                                            <tr>    
+                            <td>GBPUSD</td>
+                            <td>50.00</td>
+                            <td>768.00</td>
+                            <td>806.00</td>
+                            <td>1.35598</td>
+                            <td>1.35616</td>
+                            <td>2018-05-07 20:03:23</td>
+                            <td>2018-05-07 20:05:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>88.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>GBPUSD</td>
+                            <td>50.00</td>
+                            <td>768.00</td>
+                            <td>768.00</td>
+                            <td>1.35596</td>
+                            <td>1.35596</td>
+                            <td>2018-05-07 20:01:00</td>
+                            <td>2018-05-07 20:03:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>50.00</td>
+                            <td>Equal</td>
+                        </tr>
+                                            <tr>    
+                            <td>GBPCAD</td>
+                            <td>50.00</td>
+                            <td>730.00</td>
+                            <td>768.00</td>
+                            <td>1.74461</td>
+                            <td>1.7446</td>
+                            <td>2018-05-07 19:46:30</td>
+                            <td>2018-05-07 19:48:00</td>
+                            <td><span style="color:red">Вниз</span></td>
+                            <td>88.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>GBPJPY</td>
+                            <td>50.00</td>
+                            <td>692.00</td>
+                            <td>730.00</td>
+                            <td>147.88199</td>
+                            <td>147.903</td>
+                            <td>2018-05-07 19:32:00</td>
+                            <td>2018-05-07 19:34:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>88.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>AUDJPY</td>
+                            <td>50.00</td>
+                            <td>742.00</td>
+                            <td>692.00</td>
+                            <td>82.03501</td>
+                            <td>82.03301</td>
+                            <td>2018-05-07 19:16:00</td>
+                            <td>2018-05-07 19:18:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>0.00</td>
+                            <td>Lose</td>
+                        </tr>
+                                            <tr>    
+                            <td>NZDUSD</td>
+                            <td>50.00</td>
+                            <td>704.00</td>
+                            <td>742.00</td>
+                            <td>0.70271</td>
+                            <td>0.70257</td>
+                            <td>2018-05-07 19:00:30</td>
+                            <td>2018-05-07 19:02:00</td>
+                            <td><span style="color:red">Вниз</span></td>
+                            <td>88.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>EURAUD</td>
+                            <td>50.00</td>
+                            <td>754.00</td>
+                            <td>704.00</td>
+                            <td>1.58503</td>
+                            <td>1.58496</td>
+                            <td>2018-05-07 18:45:00</td>
+                            <td>2018-05-07 18:47:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>0.00</td>
+                            <td>Lose</td>
+                        </tr>
+                                            <tr>    
+                            <td>EURJPY</td>
+                            <td>50.00</td>
+                            <td>716.00</td>
+                            <td>754.00</td>
+                            <td>130.11551</td>
+                            <td>130.125</td>
+                            <td>2018-05-07 18:35:30</td>
+                            <td>2018-05-07 18:37:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>88.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>USDJPY</td>
+                            <td>50.00</td>
+                            <td>766.00</td>
+                            <td>716.00</td>
+                            <td>109.1005</td>
+                            <td>109.10201</td>
+                            <td>2018-05-07 18:20:00</td>
+                            <td>2018-05-07 18:22:00</td>
+                            <td><span style="color:red">Вниз</span></td>
+                            <td>0.00</td>
+                            <td>Lose</td>
+                        </tr>
+                                            <tr>    
+                            <td>EURCAD</td>
+                            <td>50.00</td>
+                            <td>816.00</td>
+                            <td>766.00</td>
+                            <td>1.53279</td>
+                            <td>1.53253</td>
+                            <td>2018-05-07 18:03:30</td>
+                            <td>2018-05-07 18:05:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>0.00</td>
+                            <td>Lose</td>
+                        </tr>
+                                            <tr>    
+                            <td>USDJPY</td>
+                            <td>50.00</td>
+                            <td>866.00</td>
+                            <td>816.00</td>
+                            <td>109.059</td>
+                            <td>109.0505</td>
+                            <td>2018-05-07 17:55:00</td>
+                            <td>2018-05-07 17:57:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>0.00</td>
+                            <td>Lose</td>
+                        </tr>
+                                            <tr>    
+                            <td>EURAUD</td>
+                            <td>50.00</td>
+                            <td>828.00</td>
+                            <td>866.00</td>
+                            <td>1.58525</td>
+                            <td>1.58534</td>
+                            <td>2018-05-07 17:44:30</td>
+                            <td>2018-05-07 17:46:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>88.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>USDCAD</td>
+                            <td>50.00</td>
+                            <td>878.00</td>
+                            <td>828.00</td>
+                            <td>1.28477</td>
+                            <td>1.2847</td>
+                            <td>2018-05-07 17:28:19</td>
+                            <td>2018-05-07 17:30:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>0.00</td>
+                            <td>Lose</td>
+                        </tr>
+                                            <tr>    
+                            <td>USDCAD</td>
+                            <td>50.00</td>
+                            <td>840.00</td>
+                            <td>878.00</td>
+                            <td>1.28497</td>
+                            <td>1.28499</td>
+                            <td>2018-05-07 17:17:30</td>
+                            <td>2018-05-07 17:19:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>88.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>USDCAD</td>
+                            <td>50.00</td>
+                            <td>802.00</td>
+                            <td>840.00</td>
+                            <td>1.28469</td>
+                            <td>1.28506</td>
+                            <td>2018-05-07 17:15:30</td>
+                            <td>2018-05-07 17:17:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>88.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>AUDJPY</td>
+                            <td>50.00</td>
+                            <td>852.00</td>
+                            <td>802.00</td>
+                            <td>82.1445</td>
+                            <td>82.1325</td>
+                            <td>2018-05-07 17:13:30</td>
+                            <td>2018-05-07 17:15:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>0.00</td>
+                            <td>Lose</td>
+                        </tr>
+                                            <tr>    
+                            <td>EURJPY</td>
+                            <td>50.00</td>
+                            <td>902.00</td>
+                            <td>852.00</td>
+                            <td>130.1725</td>
+                            <td>130.175</td>
+                            <td>2018-05-07 17:11:30</td>
+                            <td>2018-05-07 17:13:00</td>
+                            <td><span style="color:red">Вниз</span></td>
+                            <td>0.00</td>
+                            <td>Lose</td>
+                        </tr>
+                                            <tr>    
+                            <td>EURGBP</td>
+                            <td>50.00</td>
+                            <td>864.00</td>
+                            <td>902.00</td>
+                            <td>0.87905</td>
+                            <td>0.87914</td>
+                            <td>2018-05-07 17:09:29</td>
+                            <td>2018-05-07 17:11:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>88.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>EURGBP</td>
+                            <td>50.00</td>
+                            <td>864.00</td>
+                            <td>864.00</td>
+                            <td>0.87916</td>
+                            <td>0.87916</td>
+                            <td>2018-05-07 17:07:30</td>
+                            <td>2018-05-07 17:09:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>50.00</td>
+                            <td>Equal</td>
+                        </tr>
+                                            <tr>    
+                            <td>EURCAD</td>
+                            <td>50.00</td>
+                            <td>826.00</td>
+                            <td>864.00</td>
+                            <td>1.53205</td>
+                            <td>1.53271</td>
+                            <td>2018-05-07 17:05:30</td>
+                            <td>2018-05-07 17:07:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>88.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>AUDJPY</td>
+                            <td>50.00</td>
+                            <td>788.00</td>
+                            <td>826.00</td>
+                            <td>82.1415</td>
+                            <td>82.152</td>
+                            <td>2018-05-07 17:03:30</td>
+                            <td>2018-05-07 17:05:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>88.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>EURUSD</td>
+                            <td>50.00</td>
+                            <td>838.00</td>
+                            <td>788.00</td>
+                            <td>1.19272</td>
+                            <td>1.19244</td>
+                            <td>2018-05-07 17:01:30</td>
+                            <td>2018-05-07 17:03:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>0.00</td>
+                            <td>Lose</td>
+                        </tr>
+                                            <tr>    
+                            <td>EURJPY</td>
+                            <td>50.00</td>
+                            <td>888.00</td>
+                            <td>838.00</td>
+                            <td>130.182</td>
+                            <td>130.1625</td>
+                            <td>2018-05-07 16:59:30</td>
+                            <td>2018-05-07 17:01:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>0.00</td>
+                            <td>Lose</td>
+                        </tr>
+                                            <tr>    
+                            <td>GBPJPY</td>
+                            <td>50.00</td>
+                            <td>938.00</td>
+                            <td>888.00</td>
+                            <td>148.07</td>
+                            <td>148.081</td>
+                            <td>2018-05-07 16:57:30</td>
+                            <td>2018-05-07 16:59:00</td>
+                            <td><span style="color:red">Вниз</span></td>
+                            <td>0.00</td>
+                            <td>Lose</td>
+                        </tr>
+                                            <tr>    
+                            <td>AUDUSD</td>
+                            <td>50.00</td>
+                            <td>900.00</td>
+                            <td>938.00</td>
+                            <td>0.75241</td>
+                            <td>0.75247</td>
+                            <td>2018-05-07 16:55:30</td>
+                            <td>2018-05-07 16:57:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>88.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>EURAUD</td>
+                            <td>50.00</td>
+                            <td>950.00</td>
+                            <td>900.00</td>
+                            <td>1.58483</td>
+                            <td>1.58481</td>
+                            <td>2018-05-07 16:53:30</td>
+                            <td>2018-05-07 16:55:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>0.00</td>
+                            <td>Lose</td>
+                        </tr>
+                                            <tr>    
+                            <td>USDJPY</td>
+                            <td>50.00</td>
+                            <td>1 000.00</td>
+                            <td>950.00</td>
+                            <td>109.179</td>
+                            <td>109.1785</td>
+                            <td>2018-05-07 16:51:30</td>
+                            <td>2018-05-07 16:53:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>0.00</td>
+                            <td>Lose</td>
+                        </tr>
+                                            <tr>    
+                            <td>USDCAD</td>
+                            <td>50.00</td>
+                            <td>962.00</td>
+                            <td>1 000.00</td>
+                            <td>1.2856</td>
+                            <td>1.28556</td>
+                            <td>2018-05-07 16:49:30</td>
+                            <td>2018-05-07 16:51:00</td>
+                            <td><span style="color:red">Вниз</span></td>
+                            <td>88.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>EURJPY</td>
+                            <td>50.00</td>
+                            <td>924.00</td>
+                            <td>962.00</td>
+                            <td>130.1755</td>
+                            <td>130.16449</td>
+                            <td>2018-05-07 16:47:30</td>
+                            <td>2018-05-07 16:49:00</td>
+                            <td><span style="color:red">Вниз</span></td>
+                            <td>88.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>USDCHF</td>
+                            <td>50.00</td>
+                            <td>886.00</td>
+                            <td>924.00</td>
+                            <td>1.00307</td>
+                            <td>1.00286</td>
+                            <td>2018-05-07 16:45:30</td>
+                            <td>2018-05-07 16:47:00</td>
+                            <td><span style="color:red">Вниз</span></td>
+                            <td>88.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>USDJPY</td>
+                            <td>50.00</td>
+                            <td>936.00</td>
+                            <td>886.00</td>
+                            <td>109.209</td>
+                            <td>109.21049</td>
+                            <td>2018-05-07 16:43:30</td>
+                            <td>2018-05-07 16:45:00</td>
+                            <td><span style="color:red">Вниз</span></td>
+                            <td>0.00</td>
+                            <td>Lose</td>
+                        </tr>
+                                            <tr>    
+                            <td>EURAUD</td>
+                            <td>50.00</td>
+                            <td>898.00</td>
+                            <td>936.00</td>
+                            <td>1.58493</td>
+                            <td>1.58484</td>
+                            <td>2018-05-07 16:41:30</td>
+                            <td>2018-05-07 16:43:00</td>
+                            <td><span style="color:red">Вниз</span></td>
+                            <td>88.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>GBPUSD</td>
+                            <td>50.00</td>
+                            <td>948.00</td>
+                            <td>898.00</td>
+                            <td>1.35636</td>
+                            <td>1.35627</td>
+                            <td>2018-05-07 16:39:30</td>
+                            <td>2018-05-07 16:41:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>0.00</td>
+                            <td>Lose</td>
+                        </tr>
+                                            <tr>    
+                            <td>USDCHF</td>
+                            <td>50.00</td>
+                            <td>910.00</td>
+                            <td>948.00</td>
+                            <td>1.003</td>
+                            <td>1.00297</td>
+                            <td>2018-05-07 16:37:30</td>
+                            <td>2018-05-07 16:39:00</td>
+                            <td><span style="color:red">Вниз</span></td>
+                            <td>88.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>USDCAD</td>
+                            <td>50.00</td>
+                            <td>960.00</td>
+                            <td>910.00</td>
+                            <td>1.28555</td>
+                            <td>1.28559</td>
+                            <td>2018-05-07 16:35:30</td>
+                            <td>2018-05-07 16:37:00</td>
+                            <td><span style="color:red">Вниз</span></td>
+                            <td>0.00</td>
+                            <td>Lose</td>
+                        </tr>
+                                            <tr>    
+                            <td>AUDJPY</td>
+                            <td>50.00</td>
+                            <td>1 010.00</td>
+                            <td>960.00</td>
+                            <td>82.1555</td>
+                            <td>82.152</td>
+                            <td>2018-05-07 16:33:30</td>
+                            <td>2018-05-07 16:35:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>0.00</td>
+                            <td>Lose</td>
+                        </tr>
+                                            <tr>    
+                            <td>EURCAD</td>
+                            <td>50.00</td>
+                            <td>972.00</td>
+                            <td>1 010.00</td>
+                            <td>1.533</td>
+                            <td>1.53279</td>
+                            <td>2018-05-07 16:31:17</td>
+                            <td>2018-05-07 16:33:00</td>
+                            <td><span style="color:red">Вниз</span></td>
+                            <td>88.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>EURCAD</td>
+                            <td>50.00</td>
+                            <td>972.00</td>
+                            <td>972.00</td>
+                            <td>1.53282</td>
+                            <td>1.53282</td>
+                            <td>2018-05-07 16:29:30</td>
+                            <td>2018-05-07 16:31:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>50.00</td>
+                            <td>Equal</td>
+                        </tr>
+                                            <tr>    
+                            <td>EURAUD</td>
+                            <td>50.00</td>
+                            <td>1 022.00</td>
+                            <td>972.00</td>
+                            <td>1.58513</td>
+                            <td>1.58521</td>
+                            <td>2018-05-07 16:27:30</td>
+                            <td>2018-05-07 16:29:00</td>
+                            <td><span style="color:red">Вниз</span></td>
+                            <td>0.00</td>
+                            <td>Lose</td>
+                        </tr>
+                                            <tr>    
+                            <td>NZDUSD</td>
+                            <td>50.00</td>
+                            <td>984.00</td>
+                            <td>1 022.00</td>
+                            <td>0.70247</td>
+                            <td>0.70236</td>
+                            <td>2018-05-07 16:25:30</td>
+                            <td>2018-05-07 16:27:00</td>
+                            <td><span style="color:red">Вниз</span></td>
+                            <td>88.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>EURCAD</td>
+                            <td>50.00</td>
+                            <td>946.00</td>
+                            <td>984.00</td>
+                            <td>1.53282</td>
+                            <td>1.53293</td>
+                            <td>2018-05-07 16:23:30</td>
+                            <td>2018-05-07 16:25:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>88.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>GBPAUD</td>
+                            <td>50.00</td>
+                            <td>908.00</td>
+                            <td>946.00</td>
+                            <td>1.80421</td>
+                            <td>1.80383</td>
+                            <td>2018-05-07 16:21:30</td>
+                            <td>2018-05-07 16:23:00</td>
+                            <td><span style="color:red">Вниз</span></td>
+                            <td>88.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>AUDJPY</td>
+                            <td>50.00</td>
+                            <td>958.00</td>
+                            <td>908.00</td>
+                            <td>82.136</td>
+                            <td>82.153</td>
+                            <td>2018-05-07 16:19:30</td>
+                            <td>2018-05-07 16:21:00</td>
+                            <td><span style="color:red">Вниз</span></td>
+                            <td>0.00</td>
+                            <td>Lose</td>
+                        </tr>
+                                            <tr>    
+                            <td>EURGBP</td>
+                            <td>50.00</td>
+                            <td>920.00</td>
+                            <td>958.00</td>
+                            <td>0.87856</td>
+                            <td>0.87846</td>
+                            <td>2018-05-07 16:17:30</td>
+                            <td>2018-05-07 16:19:00</td>
+                            <td><span style="color:red">Вниз</span></td>
+                            <td>88.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>NZDUSD</td>
+                            <td>50.00</td>
+                            <td>882.00</td>
+                            <td>920.00</td>
+                            <td>0.70252</td>
+                            <td>0.70236</td>
+                            <td>2018-05-07 16:15:30</td>
+                            <td>2018-05-07 16:17:00</td>
+                            <td><span style="color:red">Вниз</span></td>
+                            <td>88.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>EURCAD</td>
+                            <td>50.00</td>
+                            <td>844.00</td>
+                            <td>882.00</td>
+                            <td>1.53289</td>
+                            <td>1.53292</td>
+                            <td>2018-05-07 16:13:30</td>
+                            <td>2018-05-07 16:15:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>88.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>EURAUD</td>
+                            <td>50.00</td>
+                            <td>806.00</td>
+                            <td>844.00</td>
+                            <td>1.58474</td>
+                            <td>1.58501</td>
+                            <td>2018-05-07 16:11:30</td>
+                            <td>2018-05-07 16:13:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>88.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>GBPAUD</td>
+                            <td>50.00</td>
+                            <td>768.00</td>
+                            <td>806.00</td>
+                            <td>1.80472</td>
+                            <td>1.80438</td>
+                            <td>2018-05-07 16:09:30</td>
+                            <td>2018-05-07 16:11:00</td>
+                            <td><span style="color:red">Вниз</span></td>
+                            <td>88.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>USDJPY</td>
+                            <td>50.00</td>
+                            <td>818.00</td>
+                            <td>768.00</td>
+                            <td>109.218</td>
+                            <td>109.2295</td>
+                            <td>2018-05-07 16:07:30</td>
+                            <td>2018-05-07 16:09:00</td>
+                            <td><span style="color:red">Вниз</span></td>
+                            <td>0.00</td>
+                            <td>Lose</td>
+                        </tr>
+                                            <tr>    
+                            <td>AUDUSD</td>
+                            <td>50.00</td>
+                            <td>780.00</td>
+                            <td>818.00</td>
+                            <td>0.75188</td>
+                            <td>0.75182</td>
+                            <td>2018-05-07 16:05:30</td>
+                            <td>2018-05-07 16:07:00</td>
+                            <td><span style="color:red">Вниз</span></td>
+                            <td>88.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>EURJPY</td>
+                            <td>50.00</td>
+                            <td>742.00</td>
+                            <td>780.00</td>
+                            <td>130.17401</td>
+                            <td>130.16599</td>
+                            <td>2018-05-07 16:03:30</td>
+                            <td>2018-05-07 16:05:00</td>
+                            <td><span style="color:red">Вниз</span></td>
+                            <td>88.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>GBPAUD</td>
+                            <td>50.00</td>
+                            <td>704.00</td>
+                            <td>742.00</td>
+                            <td>1.80492</td>
+                            <td>1.8051</td>
+                            <td>2018-05-07 16:01:30</td>
+                            <td>2018-05-07 16:03:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>88.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>GBPCAD</td>
+                            <td>50.00</td>
+                            <td>666.00</td>
+                            <td>704.00</td>
+                            <td>1.74478</td>
+                            <td>1.74526</td>
+                            <td>2018-05-07 15:59:30</td>
+                            <td>2018-05-07 16:01:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>88.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>GBPJPY</td>
+                            <td>50.00</td>
+                            <td>628.00</td>
+                            <td>666.00</td>
+                            <td>148.231</td>
+                            <td>148.2425</td>
+                            <td>2018-05-07 15:57:30</td>
+                            <td>2018-05-07 15:59:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>88.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>USDCAD</td>
+                            <td>50.00</td>
+                            <td>590.00</td>
+                            <td>628.00</td>
+                            <td>1.28519</td>
+                            <td>1.28538</td>
+                            <td>2018-05-07 15:55:30</td>
+                            <td>2018-05-07 15:57:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>88.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>EURUSD</td>
+                            <td>50.00</td>
+                            <td>552.00</td>
+                            <td>590.00</td>
+                            <td>1.1924</td>
+                            <td>1.19212</td>
+                            <td>2018-05-07 15:53:30</td>
+                            <td>2018-05-07 15:55:00</td>
+                            <td><span style="color:red">Вниз</span></td>
+                            <td>88.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>USDCHF</td>
+                            <td>50.00</td>
+                            <td>514.00</td>
+                            <td>552.00</td>
+                            <td>1.00281</td>
+                            <td>1.00278</td>
+                            <td>2018-05-07 15:51:00</td>
+                            <td>2018-05-07 15:53:00</td>
+                            <td><span style="color:red">Вниз</span></td>
+                            <td>88.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>USDCAD</td>
+                            <td>50.00</td>
+                            <td>564.00</td>
+                            <td>514.00</td>
+                            <td>1.28659</td>
+                            <td>1.28606</td>
+                            <td>2018-05-07 15:45:00</td>
+                            <td>2018-05-07 15:47:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>0.00</td>
+                            <td>Lose</td>
+                        </tr>
+                                            <tr>    
+                            <td>GBPJPY</td>
+                            <td>50.00</td>
+                            <td>526.00</td>
+                            <td>564.00</td>
+                            <td>148.1595</td>
+                            <td>148.151</td>
+                            <td>2018-05-07 15:29:00</td>
+                            <td>2018-05-07 15:31:00</td>
+                            <td><span style="color:red">Вниз</span></td>
+                            <td>88.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>GBPCAD</td>
+                            <td>50.00</td>
+                            <td>488.00</td>
+                            <td>526.00</td>
+                            <td>1.74438</td>
+                            <td>1.7445</td>
+                            <td>2018-05-07 15:22:00</td>
+                            <td>2018-05-07 15:24:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>88.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>USDCAD</td>
+                            <td>50.00</td>
+                            <td>450.00</td>
+                            <td>488.00</td>
+                            <td>1.28709</td>
+                            <td>1.28687</td>
+                            <td>2018-05-07 15:15:00</td>
+                            <td>2018-05-07 15:17:00</td>
+                            <td><span style="color:red">Вниз</span></td>
+                            <td>88.00</td>
+                            <td>Win</td>
+                        </tr>
+                                            <tr>    
+                            <td>USDJPY</td>
+                            <td>50.00</td>
+                            <td>500.00</td>
+                            <td>450.00</td>
+                            <td>109.3615</td>
+                            <td>109.351</td>
+                            <td>2018-05-07 15:02:49</td>
+                            <td>2018-05-07 15:04:00</td>
+                            <td><span style="color:green">Вверх</span></td>
+                            <td>0.00</td>
+                            <td>Lose</td>
+                        </tr>
+                                    </tbody>
+            </table>
+        </div>
+    </div>
+</div>            <style>
+            #footer{
+                height:480px;
+                
+            }
+            #footer p{
+                color: #222;
+                font-size: 14px;
+                text-align: justify;
+            }
+        </style>
+        <div class='container-fluid' style='background: white;'>
+            <div class="container" id="footer" >
+                <div class='row'>
+                    
+                    <div class='col-sm-7' >
+                        <div style="padding-top:30px; padding-bottom: 18px;">                        
+                            <img src="/html/images/icons1.png">
+                        </div>
+                        
+                        <div style="margin-bottom:20px;">
+                            <a href="/terms/" style="color: #222; text-decoration: underline;">Правила и условия</a>
+                        </div>
+                        
+                        <p>Information on Auto Bintrade.net and Auto Bintrade.com should not be seen as a recommendation to trade binary options. Auto Bintrade.net/Auto Bintrade.com is a free software that enables you to receive free binary signals from 3rd parties. Auto Bintrade.net/Auto Bintrade.com is not licensed nor authorized to provide advice on investing and related matters. Information on the website is not, nor should it be seen as investment advice. Clients without sufficient knowledge should seek individual advice from an authorized source. Binary options trading entails significant risks and there is a chance that clients lose their invesments. Past performance is not a guarantee of future returns.</p>
+                        <p style="border-bottom: 1px solid #4e4e4e; padding-bottom:20px;">Our software is independent of binary brokers featured herein. Before trading with any of the brokers, clients should make sure they understand the risks involved.</p>
+                        
+                        <p>Copyright © 2016 Auto Bintrade. </br>All Rights Reserved.</p>                               
+                    </div>
+                    
+                    <div class='col-sm-5'>
+                        <h2 style="padding-top:40px; padding-bottom:15px;text-align: center;color: white; font-size: 24px;">Остались вопросы?</h2>
+                        <style>
+                            #footer .form .form-control{
+                                border-radius: 7px;
+                            }
+                            #footer .form input.form-control[type=text],#footer .form textarea.form-control{
+                                background: #f8f8f8;
+                                height: 47px;
+                                border: 1px solid transparent;
+                                box-shadow:none;
+                            }
+                            #footer .form input.form-control[type=text]:focus,#footer .form textarea.form-control:focus{
+                                background:white;
+                                border: 1px solid #ff8a80;
+                            }
+                            #footer .form input.btn[type=submit]{
+                                background: white;
+                                
+                                border:none;
+                                box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+                                height:42px;
+                                border-radius: 25px;
+                                color: #838383;
+                                font-weight:bolder;
+                                font-size: 18px;
+                                padding:5px 40px;
+                            }
+                            
+                            #footer .form .user_ico{
+                                display:block;
+                                width:19px;
+                                height: 19px;
+                                background: url('/html/images/icons.png');
+                                background-position:0px 0px;
+                                position:absolute;
+                                top:14px;
+                                right:19px;
+                            }
+							#footer .form .user_ico.active{
+                                background-position:-128px 0px;
+                            }
+                            
+                            #footer .form .email_ico{
+                                display:block;
+                                width:23px;
+                                height: 19px;
+                                background: url('/html/images/icons.png');
+                                background-position:-100px 0px;
+                                position:absolute;
+                                top:14px;
+                                right:17px;
+                            }                            
+							#footer .form .email_ico.active{
+                                background-position:-24px 0px;
+                            }
+                        </style>
+                        
+                        <script>
+                            $('document').ready(function(){
+								$('#question input[name=name]').focus(function(){                            
+                                    $('#footer .form .user_ico').addClass('active');
+                                });
+                                $('#question input[name=name]').blur(function(){  
+                                    $('#footer .form .user_ico').removeClass('active');
+                                });
+
+                                $('#question input[name=email]').focus(function(){
+                                    $('#footer .form .email_ico').addClass('active');
+                                });
+                                $('#question input[name=email]').blur(function(){
+                                    $('#footer .form .email_ico').removeClass('active');
+                                });
+
+                                $('#question').submit(function(){
+                                    var name = $('input[name=name]',this).val();
+                                    var email = $('input[name=email]',this).val();
+                                    var text = $('textarea[name=question]',this).val();
+									var el = $(this);
+                                    
+                                    $('#question input[type=submit]').attr('disabled','disabled');
+
+                                    $.ajax({
+                                        url:'/question/',
+                                        type:'POST',
+                                        data:{name:name, email:email, text:text},
+                                        success:function(msg){
+                                            var json = JSON.parse(msg);
+
+                                            setInterval(function(){
+                                                $('#question input[type=submit]').removeAttr('disabled');
+                                            },1000);
+
+                                            if(json.status == 'success'){
+			                                    $('input[name=name]',el).val('');
+			                                    $('input[name=email]',el).val('');
+			                                    $('textarea[name=question]',el).val('');
+
+                                                $('#question .error').empty();
+                                                $('#question .success').text('Ваш вопрос успешно отправлен');
+                                            }else{
+                                                $('#question .success').empty();
+                                                $('#question .error').text(json.message);
+                                            }                                            
+                                        }
+                                    });
+
+                                    return false;
+                                });
+                            });
+                        </script>
+                        
+                        <form class="form" id='question'>
+                            <div class='form-group'>
+                                <div class='row'>
+                                    <div class='col-sm-6' style="padding-right:7px;">
+                                        <div style="position:relative">
+                                            <span class="user_ico"></span>
+                                            <input type='text' class='form-control' placeholder="Имя" name='name'>
+                                        </div>
+                                    </div>
+                                    <div class='col-sm-6' style="padding-left:7px;">
+                                        <div style="position:relative">
+                                            <span class="email_ico"></span>
+                                            <input type='text' class='form-control' placeholder="Email" name='email'>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class='form-group'>
+                                <div class='row'>
+                                    <div class='col-sm-12'>
+                                        <textarea name='question' style="height:165px;" class='form-control' placeholder="Задайте свой вопрос и наш менеджер свяжется с Вами в ближайшее время"></textarea>
+										<div style="color: red" class="error"></div>
+                                        <div style="color: green" class="success"></div>
+                                    </div>                                
+                                </div>
+                            </div>
+                            
+                            <div class='form-group'>
+                                <div class='row'>
+                                    <div class='col-sm-12 text-center'>
+                                        <input type="submit" class="btn" value="Задать вопрос">
+                                    </div>                                
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>   </body>
+</html>
